@@ -53,8 +53,14 @@ if(isset($_GET['action']) && $_GET['action']=='edit'){
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a href="" class="navbar-brand"> Gestion des Réservations</a>
     </div>  
+    <div class="collapse navbar-collapse" id="navbarMenu">
     <ul class="nav navbar-nav">
       <li><a href="index.php">Les clients</a></li>
       <li><a href="activites.php">Les activités</a></li>
