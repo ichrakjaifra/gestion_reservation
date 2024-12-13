@@ -43,8 +43,14 @@ if(isset($_GET['action']) && $_GET['action']=='edit'){
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a href="index.php" class="navbar-brand">Gestion des Réservations</a>
     </div>
+    <div class="collapse navbar-collapse" id="navbarMenu">
     <ul class="nav navbar-nav">
     <li><a href="index.php">Les clients</a></li>
     <li><a href="activites.php">Les activités</a></li>
@@ -55,24 +61,28 @@ if(isset($_GET['action']) && $_GET['action']=='edit'){
 
 <div class="container" style="margin-top: 80px;">
   <div class="panel panel-primary">
-    <div class="panel-heading"><?php echo $title; ?> un Nouveau Client</div>
+    <div class="panel-heading text-center"><?php echo $title; ?> un Nouveau Client</div>
     <div class="panel-body">
       <form action="index.php" method="POST">
-        <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
           <label for="nom">Nom :</label>
           <input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>" placeholder="Entrez le nom" autocomplete="false">
         </div>
-        <div class="form-group">
+        <div class="col-md-6">
           <label for="prenom">Prénom :</label>
           <input type="text" class="form-control" name="prenom" value="<?php echo $prenom; ?>" placeholder="Entrez le prénom" autocomplete="false">
         </div>
-        <div class="form-group">
+        </div>
+        <div class="row">
+        <div class="col-md-6">
           <label for="email">Email :</label>
           <input type="email" class="form-control" name="email" value="<?php echo $email; ?>" placeholder="Entrez l'email" autocomplete="false">
         </div>
-        <div class="form-group">
+        <div class="col-md-6">
           <label for="telephone">Téléphone :</label>
           <input type="text" class="form-control" name="telephone" value="<?php echo $telephone; ?>" placeholder="Entrez le numéro de téléphone">
+        </div>
         </div>
         <div class="form-group">
           <label for="adresse">Adresse :</label>
