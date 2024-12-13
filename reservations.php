@@ -58,7 +58,7 @@ $all_reservation = mysqli_query($con, $reservations_sql);
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/toster.css">
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <title>Document</title>
+  <title>Gestion des Réservations</title>
   <!-- <link rel="stylesheet" href="css/monStyle.css"> -->
 </head>
 <body>
@@ -66,13 +66,20 @@ $all_reservation = mysqli_query($con, $reservations_sql);
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
       <a href="" class="navbar-brand"> Gestion des Réservations</a>
     </div>  
+    <div class="collapse navbar-collapse" id="navbarMenu">
   <ul class="nav navbar-nav">
     <li><a href="index.php">Les clients</a></li>
     <li><a href="activites.php">Les activités</a></li>
     <li><a href="reservations.php">Les réservations</a></li>
   </ul>
+  </div>
   </div>
 </nav>
 
@@ -88,6 +95,7 @@ $all_reservation = mysqli_query($con, $reservations_sql);
   <div class="panel panel-primary">
   <div class="panel-heading">Liste des réservations</div>
   <div class="panel-body">
+  <div class="table-responsive">
   <table class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -135,6 +143,7 @@ while ($reservation = $all_reservation->fetch_assoc()) { ?>
       
       </tbody>
     </table>
+  </div>
   </div>  
   </div>
 </div>
@@ -155,10 +164,10 @@ while ($reservation = $all_reservation->fetch_assoc()) { ?>
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <p>&copy; 2024 Gestion des Réservations. All rights reserved.</p>
+        <p>&copy; 2024 Gestion des Réservations. Tous droits réservés.</p>
       </div>
       <div class="col-sm-6 text-right">
-        <p>Designed by <a href="https://www.yourwebsite.com" target="_blank">Ichrak Jaifra</a></p>
+        <p>Conçu par <a href="https://www.yourwebsite.com" target="_blank">Ichrak Jaifra</a></p>
       </div>
     </div>
   </div>
@@ -182,6 +191,12 @@ while ($reservation = $all_reservation->fetch_assoc()) { ?>
   .footer a:hover {
     color: #0275d8;
   }
+  @media (max-width: 768px) {
+      .navbar-inverse .navbar-nav > li > a {
+        padding: 10px 15px;
+        text-align: center;
+      }
+    }
 </style>
 
 
